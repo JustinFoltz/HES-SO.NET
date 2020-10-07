@@ -1,0 +1,10 @@
+---
+- hosts:
+    - k8s-master
+    - k8s-worker
+    - k8s-utils
+  vars_files:
+    - vars/users.yml
+  become: yes
+  roles:
+  - users-linux
