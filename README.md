@@ -6,7 +6,7 @@
 
 ## The project
 
-HESSN is a social network allowing users to :
+HES-SO.NET is a social network allowing users to :
 
 - post and view ephemeral messages at specific locations
 - add friends and chat with them
