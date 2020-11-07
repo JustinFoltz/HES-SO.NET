@@ -1,22 +1,20 @@
 # HES-SO.NET
 
+**Developed by:**  Maxime Hutinet, José Neto Gonçalves, Justin Foltz, Carina Inacio Oliviera, Guillaume Riondet
+
+**Date:** 04.2020
+
+## The project
+
 HESSN is a social network allowing users to :
 
 - post and view ephemeral messages at specific locations
 - add friends and chat with them
 - join specific group
 
-[![Main](https://github.com/maximehutinet/HES-SO.NET/raw/main/img/main.png)](https://github.com/maximehutinet/HES-SO.NET/blob/main/img/main.png)
+![](./img/desktop.jpg)
 
-**Authors :**
-
-- Maxime Hutinet
-- José Neto Gonçalves
-- Justin Foltz
-- Carina Inacio Oliviera
-- Guillaume Riondet
-
-# The project
+## Technologies
 
 The project has been built with different technologies :
 
@@ -25,16 +23,16 @@ The project has been built with different technologies :
 - RabbitMQ for the notification system
 - PostgresSQL for the database
 
-# How to run the project ?
+## How to run the project ?
 
-## Requirements
+### Requirements
 
 To run the project, the followings must be installed on the machine :
 
 - Docker
 - Docker-compose
 
-## Running the project
+### Running the project
 
 1. Clone the repository
 2. Run Docker Compose with the following command
@@ -60,7 +58,7 @@ password` : `admin
 
 1. You can now sign up to the website by navigating to `http://localhost:8001/signup`
 
-## Destorying the environment
+### Destroying the environment
 
 1. Run :
 
