@@ -1,71 +1,69 @@
-# Web App (Back + Front)
+# HES-SO.NET
 
-## Introduction
+HESSN is a social network allowing users to :
 
-Application de réseau social géoloclisé.
+- post and view ephemeral messages at specific locations
+- add friends and chat with them
+- join specific group
 
-**Réalisée par :** José Neto Gonçalves, Maxime Hutinet, Carina Inacio Oliviera, Guillaume Riondet, Justin Foltz
+[![Main](https://github.com/maximehutinet/HES-SO.NET/raw/main/img/main.png)](https://github.com/maximehutinet/HES-SO.NET/blob/main/img/main.png)
 
-**Date :** 04.2020
+**Authors :**
 
-## Utilisation
+- Maxime Hutinet
+- José Neto Gonçalves
+- Justin Foltz
+- Carina Inacio Oliviera
+- Guillaume Riondet
 
-TBD...
+# The project
 
-### Containers
+The project has been built with different technologies :
 
-| Container | Nom (DNS) | Description | Ports |
-| --------- | --------- | ----------- | ----- |
-| postgres | django-db | Container utilisé pour la base donnée postgres | 5432 |
-| python:3.7 | django-back | Container utilisé pour la partie backend de l'application | 8001:8000 |
-| python:3.7 | django-front | Container utilisé pour la partie front-end de l'application | 8000:8000 |
+- Django for the API REST, HTTP server and Websocket server
+- HTML/CSS, JavaScript/JQuery, Bootstrap for the website
+- RabbitMQ for the notification system
+- PostgresSQL for the database
 
-### Environement de dev.
+# How to run the project ?
 
-#### Mettre en place l'environement
+## Requirements
 
-Pour effectuer le demarrage du serveur il suffit de lancer :
+To run the project, the followings must be installed on the machine :
 
-```bash
+- Docker
+- Docker-compose
+
+## Running the project
+
+1. Clone the repository
+2. Run Docker Compose with the following command
+
+```
 docker-compose up -d
 ```
 
-##### Création de l'utilisateur admin
+1. Open a browser and navigate to `http://localhost:8001/admin/`
+2. Log in with the following credentials :
 
-```bash
-docker exec -ti django-back bash
-python manage.py createsuperuser
+```
+username` : `admin
+password` : `admin
 ```
 
-#### Détruire l'environement
+1. Navigate to Backend > Visibilitys
+2. Add the three following visibilities in order :
 
-Lancez :
+- Public
+- Semi Private
+- Private
 
-```bash
+1. You can now sign up to the website by navigating to `http://localhost:8001/signup`
+
+## Destorying the environment
+
+1. Run :
+
+```
 docker-compose down
 ```
-
-
-#### Rebuild l'environement
-
-```bash
-docker-compose up --build --force-recreate
-```
-
-## Problèmes connus
-
-Problème de localisation : 
-
-* Ouvrez firefox
-* tapez `about:config`
-* Puis modifiez la lignre `geo.wifi.uri` avec cette clé: 
-
-```bash
-https://location.services.mozilla.com/v1/geolocate?key=%MOZILLA_API_KEY%
-```
-
-## Sources
-
-* https://docs.docker.com/compose/django/
-* https://docs.docker.com/compose/compose-file/
-* https://stackoverflow.com/questions/36884991/how-to-rebuild-docker-container-in-docker-compose-yml
